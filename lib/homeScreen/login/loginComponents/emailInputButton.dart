@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sa3edny/homeScreen/register/register.dart';
 
 class emailInputButton extends StatelessWidget {
   String title;
+  static bool valid = false;
 
   emailInputButton({required this.title});
 
@@ -29,4 +31,8 @@ class emailInputButton extends StatelessWidget {
       ),
     );
   }
+ static validate(){
+      valid=true;
+  }
 }
+

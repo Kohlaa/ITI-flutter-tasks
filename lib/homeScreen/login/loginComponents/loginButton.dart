@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sa3edny/chatScreen.dart';
+import 'package:sa3edny/homeScreen/login/loginComponents/emailInputButton.dart';
 
 import '../../register/register.dart';
 
@@ -17,17 +19,21 @@ class loginButton extends StatelessWidget {
       minWidth: 201,
       color: Colors.orange,
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => register()),
-        );
-
+        emailInputButton.validate();
+    if (emailInputButton.valid == true) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ChatScreen()),
+      );
+    }
+        // if (validateform() == true) {
         // Navigator.pushReplacement(
         //   context,
         //   MaterialPageRoute(
-        //     builder: (BuildContext context) =>  L(),
+        //     builder: (BuildContext context) => register(),
         //   ),
         // );
+        // }
       },
       child: Text(
         btnTxt,

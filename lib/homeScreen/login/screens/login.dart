@@ -20,14 +20,17 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.orange,
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(
-            Icons.arrow_back_ios_outlined,
+            Icons.access_alarms_outlined,
             color: Color(0xFF242424),
           ),
         ),
+        actions: [
+          Icon(Icons.favorite)
+        ],
       ),
       body: ListView(children: [
         Column(
@@ -43,51 +46,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.circular(200),
               ),
               child: Stack(alignment: Alignment.bottomCenter, children: [
-                const Text(
-                  "ساعدنى",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50,
-                      color: Colors.orange),
-                  textAlign: TextAlign.center,
-                ),
+                 Image.asset('assets/images/person.png')
+                  ,
               ]),
             ),
-            Padding(
-              padding: const EdgeInsets.only(right: 60),
-              child: Row(
-                textDirection: TextDirection.rtl,
-                children: [
-                  Text(
-                    "اهلا بيك فى تطبيق",
-                    style: TextStyle(
-                        color: Color(0xFF242424),
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    "ساعدنى",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                        color: Colors.orange),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
+
             SizedBox(
               height: 20,
             ),
             emailInputButton(
-              title: ' البريد الاليكترونى',
+              title: ' email',
             ),
             SizedBox(
               height: 10,
             ),
             passwordInputButton(
-              hintTxt: 'كلمة المرور',
+              hintTxt: 'Password',
             ),
             const SizedBox(
               height: 20,
@@ -97,8 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 InkWell(
                     child: const Text(
-                      'هل نسيت كلمة المرور؟',
-                      textDirection: TextDirection.rtl,
+                      'Forgot password?',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                         fontSize: 12,
@@ -113,9 +86,9 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 12,
             ),
-            loginButton(btnTxt: 'تسجيل الدخول'),
+            loginButton(btnTxt: 'Login'),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Container(
               alignment: Alignment.centerRight,
@@ -129,14 +102,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       MaterialPageRoute(builder: (context) => register()),
                     ),
                     child: const Text(
-                      'اضافة حساب',
+                      'Register?',
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.orange),
                     ),
                   ),
-                  const Text('ليس لديك حساب بالفعل؟',
+                  const Text('Don\'t have account?',
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
